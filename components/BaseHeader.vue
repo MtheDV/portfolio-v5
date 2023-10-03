@@ -1,7 +1,7 @@
 <template>
 	<header class="base-header">
 		<div class="logo">
-			<nuxt-icon name="smile" class="place-self-center" />
+			<nuxt-icon name="smile" />
 		</div>
 		<nav class="links">
 			<a href="/resume/resume-mathew-de-vin.pdf" target="_blank">Resume</a>
@@ -9,7 +9,6 @@
 			<a href="https://linkedin.com/in/mathew-de-vin" target="_blank">LinkedIn</a>
 			<a href="mailto:mathewdevin03@gmail.com" target="_blank">Email</a>
 		</nav>
-		<!--		<now-playing class="now-playing" />-->
 	</header>
 </template>
 
@@ -56,16 +55,14 @@
 			}
 		}
 	}
-
-	.now-playing {
-		grid-column: 3 / span 1;
-	}
 }
 
 @media screen and (max-width: 450px) {
-	.base-header .links {
-		grid-column: 2 / span 2;
-		justify-self: end;
+	.base-header {
+		.links {
+			grid-column: 2 / span 2;
+			justify-self: end;
+		}
 	}
 }
 </style>
