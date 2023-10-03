@@ -1,13 +1,31 @@
 <template>
-	<div class="app">
+	<div class="app" @mousemove="updateMouseCoords" @mouseleave="mouse.visible = false">
 		<base-header />
 		<div class="description-content">
 			<about-description />
 			<bubble-decoration />
 		</div>
 		<moving-title />
+		<upcoming-project-mouse />
 	</div>
 </template>
+
+<script setup lang="ts">
+const mouse = ref({
+	x: '0px',
+	y: '0px',
+	visible: false
+})
+
+const updateMouseCoords = (event: MouseEvent) => {
+	if (!event) { return }
+	mouse.value.x = event.pageX + 'px'
+	mouse.value.y = event.pageY + 'px'
+	mouse.value.visible = true
+}
+
+provide('mouse', mouse)
+</script>
 
 <style lang="scss">
 :root {

@@ -12,6 +12,7 @@
 	from {
 		transform: translate3d(0, 0, 0);
 	}
+
 	to {
 		transform: translate3d(-100%, 0, 0);
 	}
@@ -26,8 +27,8 @@
 	display: flex;
 
 	h1 {
-		padding-left: 5rem;
-		line-height: 90%;
+		padding-right: 5rem;
+		line-height: 100%;
 		animation-name: slide-left;
 		animation-duration: 10s;
 		animation-timing-function: linear;
