@@ -4,7 +4,7 @@
 			<nuxt-icon name="smile" class="place-self-center" />
 		</div>
 		<nav class="links">
-			<a href="/" target="_blank">Resume</a>
+			<a href="/resume/resume-mathew-de-vin.pdf" target="_blank">Resume</a>
 			<a href="https://github.com/MtheDV" target="_blank">Github</a>
 			<a href="https://linkedin.com/in/mathew-de-vin" target="_blank">LinkedIn</a>
 			<a href="mailto:mathewdevin03@gmail.com" target="_blank">Email</a>
