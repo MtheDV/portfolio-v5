@@ -50,4 +50,12 @@
 		}
 	}
 }
+
+@media screen and (max-width: 650px) {
+	.bubble-decoration {
+		width: 100%;
+		height: 2rem;
+		border-radius: 0;
+	}
+}
 </style>

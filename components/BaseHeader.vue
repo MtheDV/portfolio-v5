@@ -57,7 +57,7 @@
 	}
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 650px) {
 	.base-header {
 		.links {
 			grid-column: 2 / span 2;

@@ -76,10 +76,14 @@ p {
 
 @media screen and (max-width: 650px) {
 	.app .description-content {
-		flex-direction: column-reverse;
+		flex-direction: column;
 		justify-content: end;
 		align-items: flex-start;
-		gap: 1rem;
+		gap: 2.25rem;
+
+		.about-description {
+			width: 100%;
+		}
 	}
 }
 
