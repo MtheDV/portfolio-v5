@@ -26,12 +26,17 @@
 	.logo {
 		grid-column: 1 / span 1;
 		width: 2.125rem;
-		height: 2.125rem;
 		padding: 1.25rem;
 		box-sizing: content-box;
 		background-color: rgba(255, 255, 255, 0.5);
 		border-radius: 9999px;
 		backdrop-filter: blur(0.1875rem);
+
+		.nuxt-icon {
+			display: inline-block;
+			width: 2.125rem;
+			height: 2.125rem;
+		}
 	}
 
 	.links {
