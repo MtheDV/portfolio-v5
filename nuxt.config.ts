@@ -7,11 +7,9 @@ export default defineNuxtConfig({
 		'nuxt-icons'
 	],
 	googleFonts: {
+		preload: true,
 		families: {
 			Manrope: {
-				wght: [300, 400, 500, 600, 700]
-			},
-			'EB+Garamond': {
 				wght: [300, 400, 500, 600, 700]
 			}
 		}
