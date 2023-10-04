@@ -1,15 +1,21 @@
 <template>
-	<transition name="fade" appear>
-		<div class="app" @mousemove="updateMouseCoords" @mouseleave="mouse.visible = false">
-			<base-header />
-			<div class="description-content">
-				<about-description />
-				<bubble-decoration />
+	<div>
+		<Head>
+			<Title>Mathew de Vin</Title>
+			<Meta name="description" content="A front-end web developer passionate about design, user experience, and clean code." />
+		</Head>
+		<transition name="fade" appear>
+			<div class="app" @mousemove="updateMouseCoords" @mouseleave="mouse.visible = false">
+				<base-header />
+				<div class="description-content">
+					<about-description />
+					<bubble-decoration />
+				</div>
+				<moving-title />
+				<upcoming-project-mouse />
 			</div>
-			<moving-title />
-			<upcoming-project-mouse />
-		</div>
-	</transition>
+		</transition>
+	</div>
 </template>
 
 <script setup lang="ts">
