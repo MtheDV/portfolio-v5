@@ -1,13 +1,15 @@
 <template>
-	<div class="app" @mousemove="updateMouseCoords" @mouseleave="mouse.visible = false">
-		<base-header />
-		<div class="description-content">
-			<about-description />
-			<bubble-decoration />
+	<transition name="fade" appear>
+		<div class="app" @mousemove="updateMouseCoords" @mouseleave="mouse.visible = false">
+			<base-header />
+			<div class="description-content">
+				<about-description />
+				<bubble-decoration />
+			</div>
+			<moving-title />
+			<upcoming-project-mouse />
 		</div>
-		<moving-title />
-		<upcoming-project-mouse />
-	</div>
+	</transition>
 </template>
 
 <script setup lang="ts">
@@ -102,9 +104,9 @@ p {
 }
 
 .nuxt-icon svg {
-    width: unset;
-    height: unset;
-    margin: unset;
-    vertical-align: unset;
+    width: unset !important;
+    height: unset !important;
+    margin: unset !important;
+    vertical-align: unset !important;
 }
 </style>
