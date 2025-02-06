@@ -4,41 +4,30 @@
 			<Title>Mathew de Vin</Title>
 			<Meta name="description" content="A front-end web developer passionate about design, user experience, and clean code." />
 		</Head>
-		<transition name="fade" appear>
-			<div class="app" @mousemove="updateMouseCoords" @mouseleave="mouse.visible = false">
-				<base-header />
-				<div class="description-content">
-					<about-description />
-					<bubble-decoration />
-				</div>
-				<moving-title />
-				<upcoming-project-mouse />
+		<main class="app">
+			<logo-image />
+			<section class="about-section">
+				<about-description />
+				<external-links />
+			</section>
+			<moving-title />
+			<div class="gradient-decorations">
+				<gradient-decoration v-for="(_, index) in [1,1,1,1,1]" :key="index" />
 			</div>
-		</transition>
+		</main>
 	</div>
 </template>
 
 <script setup lang="ts">
-const mouse = ref({
-	x: '0px',
-	y: '0px',
-	visible: false
-})
-
-const updateMouseCoords = (event: MouseEvent) => {
-	if (!event) { return }
-	mouse.value.x = event.pageX + 'px'
-	mouse.value.y = event.pageY + 'px'
-	mouse.value.visible = true
-}
-
-provide('mouse', mouse)
 </script>
-
 <style lang="scss">
 :root {
 	--color-primary: #4B4B4B;
 	--color-secondary: #777;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 body, html {
@@ -47,6 +36,7 @@ body, html {
 	font-family: 'Manrope', sans-serif;
 	font-size: clamp(14px, 2vw, 16px);
 	color: var(--color-primary);
+	background-color: rgb(245, 243, 241);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -68,45 +58,53 @@ p {
 }
 
 .app {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto 1fr auto auto;
+	height: 100dvh;
+	width: 100dvw;
+	overflow: hidden;
 
-	.description-content {
+	.logo-image {
+		grid-column: 1 / span 1;
+		grid-row: 1 / span 1;
+		margin: 16px;
+	}
+
+	.about-section {
+		grid-column: 1 / span 1;
+		grid-row: 2 / span 1;
+		max-width: 500px;
 		display: flex;
-		flex-grow: 1;
-		justify-content: space-between;
-		align-items: flex-end;
-		padding: 0 2.25rem;
-		gap: 2rem;
-	}
-}
-
-@media screen and (max-width: 650px) {
-	.app .description-content {
 		flex-direction: column;
-		justify-content: end;
-		align-items: flex-start;
-		gap: 2.25rem;
+		gap: 20px;
+		margin: auto 16px 16px;
+	}
 
-		.about-description {
-			width: 100%;
-		}
+	.moving-title {
+		grid-column: 1 / span 1;
+		grid-row: 3 / span 1;
+	}
+
+	.gradient-decorations {
+		grid-column: 2 / span 1;
+		grid-row: 1 / -1;
+		max-width: 20vh;
+		align-items: end;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
 	}
 }
 
-// HELPER CLASSES BELOW
-
-.fade {
-    &-enter-active,
-    &-leave-active {
-      transition: opacity 0.5s ease;
-    }
-
-    &-enter-from,
-    &-leave-to {
-        opacity: 0;
-    }
+@media screen and (max-width: 800px) {
+	.app .gradient-decorations {
+		grid-column: 1 / span 1;
+		grid-row: 4 / span 1;
+		flex-direction: row;
+		max-width: 100%;
+		height: 20dvw;
+	}
 }
 
 .nuxt-icon svg {

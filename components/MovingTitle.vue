@@ -1,9 +1,9 @@
 <template>
 	<div class="moving-title">
 		<h1>Mathew de Vin</h1>
-		<h1>Mathew de Vin</h1>
-		<h1>Mathew de Vin</h1>
-		<h1>Mathew de Vin</h1>
+		<span>Mathew de Vin</span>
+		<span>Mathew de Vin</span>
+		<span>Mathew de Vin</span>
 	</div>
 </template>
 
@@ -26,7 +26,7 @@
 	width: 100%;
 	display: flex;
 
-	h1 {
+	h1, span {
 		padding-right: 5rem;
 		line-height: 100%;
 		animation-name: slide-left;

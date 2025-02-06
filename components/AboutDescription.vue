@@ -9,8 +9,7 @@
 
 <style scoped lang="scss">
 .about-description {
-	width: 24rem;
-	font-weight: 700;
+	font-weight: 600;
 	color: var(--color-secondary);
 }
 </style>
