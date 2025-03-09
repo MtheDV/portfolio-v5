@@ -58,12 +58,9 @@ export default defineComponent({
 		}
 	},
 	mounted() {
-		const canvasCtx = this.gradientCanvas?.getContext('2d')
+		const canvas = new OffscreenCanvas(this.canvasWidth, this.canvasHeight)
+		const canvasCtx = canvas.getContext('2d')
 		if (!this.gradientCanvas || !canvasCtx) return
-
-		// Set our resolution of the canvas to be the original width/height
-		this.gradientCanvas.width = this.canvasWidth
-		this.gradientCanvas.height = this.canvasHeight
 
 		// Set the filter to blur all the rendered circles
 		canvasCtx.filter = 'blur(150px)'
@@ -84,6 +81,15 @@ export default defineComponent({
 			canvasCtx.fill()
 			canvasCtx.restore()
 		})
+
+		// Set our resolution of the canvas to be the original width/height
+		this.gradientCanvas.width = this.canvasWidth
+		this.gradientCanvas.height = this.canvasHeight
+
+		// Get the bitmap of our image rendered on the offscreen canvas
+		// and transfer it to the canvas we're rendering in the html
+		const bitmapImage = canvas.transferToImageBitmap()
+		this.gradientCanvas.getContext('bitmaprenderer')?.transferFromImageBitmap(bitmapImage)
 	},
 })
 </script>

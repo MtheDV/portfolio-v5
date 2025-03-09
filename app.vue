@@ -18,8 +18,6 @@
 	</div>
 </template>
 
-<script setup lang="ts">
-</script>
 <style lang="scss">
 :root {
 	--color-primary: #4B4B4B;
@@ -94,6 +92,7 @@ p {
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
+		background-color: rgb(231, 231, 229);
 	}
 }
 
