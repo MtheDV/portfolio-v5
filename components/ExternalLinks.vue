@@ -1,7 +1,7 @@
 <template>
 	<nav class="external-links">
 		You can find out more about my work history and skills on my
-		<a href="/resume/resume-mathew-de-vin.pdf" target="_blank">Resume</a>.
+		<a href="/resume/mathew-de-vin-resume.pdf" target="_blank">Resume</a>.
 		In the meantime I'll be coding projects on
 		<a href="https://github.com/MtheDV" target="_blank">Github</a>
 		other than that you find me on
