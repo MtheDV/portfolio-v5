@@ -4,6 +4,7 @@
 			ref="gradientCanvas"
 			class="gradient-canvas"
 		/>
+		<div class="blur-container" />
 		<div class="static-noise">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +34,6 @@
 					</filter>
 				</defs>
 			</svg>
-			<div class="desktop-background-noise-cover" />
 		</div>
 	</div>
 </template>
@@ -51,8 +51,8 @@ export default defineComponent({
 			canvasHeight: 500,
 			gradientCanvas: ref<HTMLCanvasElement>(),
 			circleElements: circleColors.map(color => ({
-				x: Math.random() * 500 - 50,
-				y: Math.random() * 500 - 50,
+				x: Math.random() * 600 - 100,
+				y: Math.random() * 600 - 100,
 				color,
 			})),
 		}
@@ -72,8 +72,8 @@ export default defineComponent({
 			canvasCtx.ellipse(
 				circleElement.x,
 				circleElement.y,
-				200,
-				200,
+				250,
+				250,
 				Math.PI / 8,
 				0,
 				2 * Math.PI,
@@ -98,14 +98,25 @@ export default defineComponent({
 .gradient-decoration {
 	width: 100%;
 	overflow: hidden;
-	filter: contrast(150%);
 	isolation: isolate;
 	flex-grow: 1;
 	aspect-ratio: 1/1;
+	position: relative;
 
 	.gradient-canvas {
 		width: 100%;
 		height: 100%;
+	}
+
+	// The blur is required here because Safari doesn't support
+	// the canvas blur filter effect, so we need this backup
+
+	.blur-container {
+		position: absolute;
+		inset: 0;
+		-webkit-backdrop-filter: blur(20px);
+		backdrop-filter: blur(40px);
+		z-index: 2;
 	}
 
 	.static-noise {
@@ -114,11 +125,7 @@ export default defineComponent({
 		filter: url('#noise-filter');
 		opacity: .8;
 		mix-blend-mode: soft-light;
-		z-index: 1;
+		z-index: 2;
 	}
-}
-
-@media screen and (width >= v-bind(canvasWidth) ){
-
 }
 </style>
