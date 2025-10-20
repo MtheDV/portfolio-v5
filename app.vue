@@ -12,7 +12,9 @@
 			</section>
 			<moving-title />
 			<div class="gradient-decorations">
-				<gradient-decoration v-for="(_, index) in [1,1,1,1,1]" :key="index" />
+				<client-only>
+					<gradient-decoration v-for="(_, index) in [1,1,1,1,1]" :key="index" />
+				</client-only>
 			</div>
 		</main>
 	</div>
@@ -87,7 +89,7 @@ p {
 	.gradient-decorations {
 		grid-column: 2 / span 1;
 		grid-row: 1 / -1;
-		max-width: 20vh;
+		width: 20vh;
 		align-items: end;
 		overflow: hidden;
 		display: flex;
@@ -101,7 +103,7 @@ p {
 		grid-column: 1 / span 1;
 		grid-row: 4 / span 1;
 		flex-direction: row;
-		max-width: 100%;
+		width: 100%;
 		height: 20dvw;
 	}
 }

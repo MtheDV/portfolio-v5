@@ -1,6 +1,6 @@
 <template>
 	<p class="about-description">
-		A front-end web developer passionate about design, user experience, and clean code.
+		A frontend engineer passionate about design, user experience, and clean code.
 		Striving to create beautiful, functional software.
 		Approaching every problem with creativity, attention to detail, and excellence.
 		Experienced in the latest web-technologies such as Vue, React, Typescript, Javascript, HTML/CSS, SCSS.
