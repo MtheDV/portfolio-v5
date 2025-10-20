@@ -28,15 +28,15 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
 	setup() {
-		const circleColors = ['#3254ca', '#5a43d6', '#8232e2', '#d145a7', '#f1532e', '#f8a529', '#ef233c']
+		const circleColors = ['#4161d2', '#8232e2', '#d145a7', '#f1532e', '#f8a529', '#ef233c']
 
 		// Get a random background color
 		const [backgroundColor] = circleColors.splice(Math.floor(Math.random() * circleColors.length), 1)
 
-		// Get 5 random colors from the selected list and give them
+		// Get colors randomly from the selected list and give them
 		// a random position on the 200 x 200 svg. The svg is center
 		// based for the X/Y, so a simple random works
-		const circleElements = Array(5).fill(0).reduce((circleElements: { x: number, y: number, color: string }[]) => {
+		const circleElements = Array(circleColors.length - 1).fill(0).reduce((circleElements: { x: number, y: number, color: string }[]) => {
 			const [color] = circleColors.splice(Math.floor(Math.random() * circleColors.length), 1)
 			circleElements.push({
 				x: Math.random() * 200,
@@ -76,8 +76,8 @@ export default defineComponent({
 	.blur-container {
 		position: absolute;
 		inset: -1px;
-		-webkit-backdrop-filter: blur(30px) contrast(110%);
-		backdrop-filter: blur(30px) contrast(110%);
+		-webkit-backdrop-filter: blur(50px) contrast(120%);
+		backdrop-filter: blur(50px) contrast(120%);
 		z-index: 2;
 	}
 }
