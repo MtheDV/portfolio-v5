@@ -24,6 +24,15 @@
 :root {
 	--color-primary: #4B4B4B;
 	--color-secondary: #777;
+	--color-background: #f5f3f1;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	:root {
+		--color-primary: #e0e0e0;
+		--color-secondary: #c9c9c9;
+		--color-background: #212121;
+	}
 }
 
 * {
@@ -36,7 +45,7 @@ body, html {
 	font-family: 'Manrope', sans-serif;
 	font-size: clamp(14px, 2vw, 16px);
 	color: var(--color-primary);
-	background-color: rgb(245, 243, 241);
+	background-color: var(--color-background);
 }
 
 h1, h2, h3, h4, h5, h6 {
